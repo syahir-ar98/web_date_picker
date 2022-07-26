@@ -18,6 +18,10 @@ class WebDatePicker extends StatefulWidget {
     this.overlayVerticalPosition = 5.0,
     this.overlayHorizontalPosiition = 0.0,
     this.inputDecoration,
+    this.label,
+    this.labelStyle,
+    this.labelText,
+    this.border,
   }) : super(key: key);
 
   /// The initial date first
@@ -51,6 +55,18 @@ class WebDatePicker extends StatefulWidget {
 
   /// The date format will be displayed in date form field
   final String dateformat;
+  
+  /// Widget for label
+  final Widget? label;
+  
+  /// String for label
+  final String? labelText;
+  
+  /// TextStyle for labelText
+  final TextStyle? labelStyle;
+  
+  /// Input form border
+  final InputBorder? border;
 
   @override
   _WebDatePickerState createState() => _WebDatePickerState();
@@ -152,8 +168,10 @@ class _WebDatePickerState extends State<WebDatePicker> {
             controller: _controller,
             decoration: widget.inputDecoration ??
                 InputDecoration(
-                  contentPadding: const EdgeInsets.symmetric(horizontal: 10),
-                  border: const OutlineInputBorder(),
+                  label: widget.label,
+                  labelText: widget.labelText,
+                  labelStyle: widget.labelStyle,
+                  border: widget.border,
                   suffixIcon: _buildPrefixIcon(),
                 ),
             onChanged: (dateString) {
