@@ -105,6 +105,7 @@ class _WebDatePickerState extends State<WebDatePicker> {
   OverlayEntry _createOverlayEntry() {
     return OverlayEntry(
       builder: (context) => Positioned(
+        top: 10,
         width: 300,
         child: CompositedTransformFollower(
           link: _layerLink,
