@@ -197,6 +197,7 @@ class _WebDatePickerState extends State<WebDatePicker> {
         onPressed: () {
           _controller.clear();
           _selectedDate = null;
+          widget.onChange.call(_selectedDate)
         },
         splashRadius: 16,
       );
