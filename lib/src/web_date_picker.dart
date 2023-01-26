@@ -55,16 +55,16 @@ class WebDatePicker extends StatefulWidget {
 
   /// The date format will be displayed in date form field
   final String dateformat;
-  
+
   /// Widget for label
   final Widget? label;
-  
+
   /// String for label
   final String? labelText;
-  
+
   /// TextStyle for labelText
   final TextStyle? labelStyle;
-  
+
   /// Input form border
   final InputBorder? border;
 
@@ -102,7 +102,7 @@ class _WebDatePickerState extends State<WebDatePicker> {
     _focusNode.addListener(() {
       if (_focusNode.hasFocus) {
         _overlayEntry = _createOverlayEntry();
-        Overlay.of(context)?.insert(_overlayEntry);
+        Overlay.of(context).insert(_overlayEntry);
       } else {
         _controller.text = _selectedDate.parseToString(widget.dateformat);
         widget.onChange.call(_selectedDate);
@@ -112,6 +112,7 @@ class _WebDatePickerState extends State<WebDatePicker> {
   }
 
   void onChange(DateTime? selectedDate) {
+    debugPrint('selectedDate: $selectedDate');
     _selectedDate = selectedDate;
     _controller.text = _selectedDate.parseToString(widget.dateformat);
 
