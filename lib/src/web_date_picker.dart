@@ -136,7 +136,7 @@ class _WebDatePickerState extends State<WebDatePicker> {
               child: CalendarDatePicker(
                 firstDate: _firstDate,
                 lastDate: _lastDate,
-                initialDate: _selectedDate ?? DateTime.now(),
+                initialDate: _selectedDate ?? _firstDate,
                 onDateChanged: onChange,
               ),
             ),
